@@ -136,3 +136,19 @@ float average(int arr[], size_t size)
 {
         return sum(arr, size)/size;
 }
+
+
+void reverse(int arr[], size_t size)
+{
+        int tmp[size];
+        for (int i = 0; i < size; i++){
+                tmp[size - 1 - i] = arr[i];
+
+        }
+        for (int i = 0; i < size; i++){
+                arr[size - 1 - i] = tmp[i];
+
+        }
+
+
+}

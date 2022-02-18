@@ -42,3 +42,99 @@ void print_array(int a[], size_t size)
 	for(i = 0; i < size; i++)
 		printf("a[%d] = %d\n", i, a[i]);
 }
+
+
+int find_max(int arr[], size_t size)
+{
+        int max = arr[0];
+        for (int i = 0; i < size; i++){
+                if (arr[i] < max){
+                        max = arr[i];
+                }
+        }
+
+        return max;
+}
+
+
+int find_min(int arr[], size_t size)
+{
+        int min = arr[0];
+        for (int i = 0; i < size; i++){
+                if (arr[i] > min){
+                        min = arr[i];
+                }
+        }
+
+        return min;
+}
+
+float midpoint(int max, int min)
+{
+        float mid = (max + min)* .5;
+        return mid;
+}
+
+void get_count(int arr[], int leg[], int count)
+{
+        size_t size = sizeof(arr)/sizeof(int);
+        for (int i = 0; i < size; i++){
+                if (arr[i] < count){
+                        leg[0]++;
+                } else if (arr[i] > count){
+                        leg[2]++;
+                } else if (arr[i] == count){
+                        leg[1]++;
+                } else {
+                        printf("Error.\n");
+                }
+        }
+
+
+}
+
+
+int linear_search(int arr[], int search, size_t size)
+{
+        for (int i = 0; i < size; i++){
+                if (arr[i] = search){
+                        return i;
+                }
+        }
+        return -1;
+
+        
+}
+
+
+int sum(int arr[], size_t size)
+{
+        int sum = 0;
+        for (int i = 0; i < size; i++){
+                sum += arr[i];
+        }
+
+        return sum;
+}
+
+
+float average(int arr[], size_t size)
+{
+        return sum(arr, size)/size;
+}
+
+
+void reverse(int arr[], size_t size)
+{
+        int tmp[size];
+        for (int i = 0; i < size; i++){
+                tmp[size - 1 - i] = arr[i];
+
+        }
+        for (int i = 0; i < size; i++){
+                arr[size - 1 - i] = tmp[i];
+
+        }
+
+
+}

@@ -24,6 +24,16 @@
 
 /* function declarations go here */
 void print_array(int a[], size_t size);
+int find_max(int arr[], size_t size);
+int find_min(int arr[], size_t size);
+float midpoint(int max, int min);
+void get_count(int arr[], int leg[], int count, size_t size);
+int linear_search(int arr[], int search, size_t size);
+int sum(int arr[], size_t size);
+void reverse(int arr[], size_t size);
+void selectionSort(int arr[], int n);
+void swap(int *xp, int *yp);
+
 
 #endif
 

@@ -1,9 +1,9 @@
  /**
  * @file lab3.c
  *
- * @author Scott Chadde
+ * @author Kassidy Maberry
  *
- * @date 1/1/2013
+ * @date 2/21/2022
  *
  * Assignment: Lab 3
  *
@@ -23,7 +23,9 @@
 
 
 
-void print_summary(size_t size);
+void print_summary(size_t size, int max, int min, int mid, int less,
+int larger, int midlin, int sum, float avg, int medi, int even,
+int odd, int divd);
 
 
 int main(void)
@@ -44,15 +46,38 @@ int main(void)
         int a[] = {9, 7, 5, 3, 2, 77, 8, 12, 4, 5, 11};
         int leg[] = {0,0,0};
 	size_t size = sizeof(a) / sizeof(int);
+        selectionSort(a, size);
         /* size_t size = sizeof(a) / sizeof(a[0]); */
-	print_array(a, size);
+	
 
 	return 0;
 }
 
-void print_summary(size_t size)
+void print_summary(size_t size, int max, int min, int mid, int less,
+int larger, int midlin, int sum, float avg, int medi, int even,
+int odd, int divd)
 {
 
         printf("Array size:%zu\n", size);
+        printf("Array max: %d\n", max);
+        printf("Array minimum: %d\n", min);
+        printf("Midpoint: %d\n", mid);
+        printf("Numbers less than the array: %d\n", less);
+        printf("Numbers larger than the array: %d\n", larger);
+
+        if (midlin == -1){
+                printf("The midpoint does not exist within the array.\n");
+        } else {
+                printf("The midpoint is at index: %d\n", midlin);
+        }
+
+        printf("The sum of all values in the array are: %d\n", sum);
+        printf("The average of all value are: %f\n", avg);
+        printf("The median is: %d\n", medi);
+        printf("The number of odd elements: %d", odd);
+        printf("The number of even elements: %d", even);
+        printf("The number of elements divisble by %d is: %d",
+         min, divd);
+
 }
 

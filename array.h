@@ -33,6 +33,12 @@ int sum(int arr[], size_t size);
 void reverse(int arr[], size_t size);
 void selectionSort(int arr[], int n);
 void swap(int *xp, int *yp);
+int odd_count(int arr[], size_t size);
+int even_count(int arr[], size_t size);
+int divisible_count(int arr[], size_t size, int div);
+int median(int arr[], size_t size);
+float average(int arr[], size_t size);
+int sum(int arr[], size_t size);
 
 
 #endif

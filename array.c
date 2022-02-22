@@ -96,7 +96,7 @@ void get_count(int arr[], int leg[], int count, size_t size)
 int linear_search(int arr[], int search, size_t size)
 {
         for (int i = 0; i < size; i++){
-                if (arr[i] = search){
+                if (arr[i] == search){
                         return i;
                 }
         }

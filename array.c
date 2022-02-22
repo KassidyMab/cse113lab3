@@ -43,7 +43,12 @@ void print_array(int a[], size_t size)
 		printf("a[%d] = %d\n", i, a[i]);
 }
 
-
+/**
+ * finds the largest element of an array
+ * @param arr[] the array
+ * @param size the length of the array
+ * @return the largest element of the array.
+ */
 int find_max(int arr[], size_t size)
 {
         int max = arr[0];
@@ -57,6 +62,12 @@ int find_max(int arr[], size_t size)
 }
 
 
+/**
+ * finds the lowest element of a given array
+ * @param arr[] the array
+ * @param size the size of the array
+ * @return the lowest element of an array
+ */
 int find_min(int arr[], size_t size)
 {
         int min = arr[0];
@@ -69,12 +80,30 @@ int find_min(int arr[], size_t size)
         return min;
 }
 
+
+/**
+ * Figures out the midpoint using the max and min values of an array.
+ * @param max the largest element of an array.
+ * @param min the lowest element of an array.
+ * @return the midpoint of the array.
+ */
 float midpoint(int max, int min)
 {
         float mid = (max + min)* .5;
         return mid;
 }
 
+
+/**
+ * Gets the count of elements greater than, equal to, and less than
+ * adding it to a second list.
+ * @param arr[] the array.
+ * @param leg[] a 3 element array that contains the lowest, equal to, and
+ * largest elements. Each time a element fits under one of the three it counts
+ * up by one.
+ * @param count the element we are using to compare to the rest.
+ * @param size the size of the array
+ */
 void get_count(int arr[], int leg[], int count, size_t size)
 {
         for (int i = 0; i < size; i++){
@@ -93,6 +122,13 @@ void get_count(int arr[], int leg[], int count, size_t size)
 }
 
 
+/**
+ * Searches for a requested element and if it is found it returns it.
+ * Otherwise it returns -1 indicating nothing was found.
+ * @param arr[] the array.
+ * @param search the element that is being specifically looked for.
+ * @param size the size of the array.
+ */
 int linear_search(int arr[], int search, size_t size)
 {
         for (int i = 0; i < size; i++){
@@ -105,7 +141,12 @@ int linear_search(int arr[], int search, size_t size)
         
 }
 
-
+/**
+ * Adds together all the elements of the list.
+ * @param arr[] the array.
+ * @param size the size of the array.
+ * @return the sum of all the elements.
+ */
 int sum(int arr[], size_t size)
 {
         int sum = 0;
@@ -116,13 +157,23 @@ int sum(int arr[], size_t size)
         return sum;
 }
 
-
+/**
+ * Finds the average of the list by adding together and then dividing
+ * by the size
+ * @param arr[] the array.
+ * @param size the size of the array.
+ * @return the average of all the elements.
+ */
 float average(int arr[], size_t size)
 {
         return sum(arr, size)/size;
 }
 
-
+/**
+ * Reverses the order of the list.
+ * @param arr[] the array.
+ * @param size the size of the array.
+ */
 void reverse(int arr[], size_t size)
 {
         int tmp[size];
@@ -139,13 +190,24 @@ void reverse(int arr[], size_t size)
 }
 
 
+/**
+ * Swaps two given elements.
+ * @param *xp element one.
+ * @param *yp element two.
+ */
 void swap(int *xp, int *yp)
 {
     int temp = *xp;
     *xp = *yp;
     *yp = temp;
 }
-  
+
+
+/**
+ * Uses a selction sort to rearrange a list from least to greatest
+ * @param arr[] the array.
+ * @param n the size of the array.
+ */
 void selectionSort(int arr[], int n)
 {
     int i, j, min_idx;
@@ -164,6 +226,12 @@ void selectionSort(int arr[], int n)
 }
 
 
+/**
+ * Finds the median value of the list and returns its index number
+ * @param arr[] the array.
+ * @param size the size of the array.
+ * @return returns the index value of an array.
+ */
 int median(int arr[], size_t size)
 {
 	int med;
@@ -177,6 +245,12 @@ int median(int arr[], size_t size)
 }
 
 
+/**
+ * Finds the amount of odd intergers in the array
+ * @param arr[] the array.
+ * @param size the size of the array.
+ * @return the amount of elements in the array.
+ */
 int odd_count(int arr[], size_t size)
 {
 	int total = 0;
@@ -189,7 +263,12 @@ int odd_count(int arr[], size_t size)
 
 }
 
-
+/**
+ * Finds the amount of even intergers in an array.
+ * @param arr[] the array.
+ * @param size the size of the array.
+ * @return the amount of even intergers in an array.
+ */
 int even_count(int arr[], size_t size)
 {
 	int total = 0;
@@ -202,7 +281,12 @@ int even_count(int arr[], size_t size)
 
 }
 
-
+/**
+ * Returns the amount of elements that are divisable by a given number
+ * @param arr[] the array.
+ * @param size the size of the array.
+ * @param div the number to divide each element by.
+ */
 int divisible_count(int arr[], size_t size, int div)
 {
 	int total = 0;

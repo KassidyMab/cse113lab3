@@ -70,6 +70,22 @@ int main(void)
 	return 0;
 }
 
+
+/**
+ * Prints a summary of the stats of a given array.
+ * @param size the length of a given array.
+ * @param max the largest element of an array.
+ * @param min the smallest element of an array.
+ * @param mid the midpoint of an the array.
+ * @param less the amount of elements less than the array.
+ * @param larger the amount of elements greater than the midpoint.
+ * @param sum the sum of all the elements added togather.
+ * @param avg the average value of the array.
+ * @param medi the median of the array.
+ * @param even the amount of even elements in an array.
+ * @param odd the amount of odd elements in an array.
+ * @param divd the amoutn of elements that can be divided by the midpoint.
+ */
 void print_summary(size_t size, int max, int min, int mid, int less,
 int larger, int midlin, int sum, float avg, int medi, int even,
 int odd, int divd)

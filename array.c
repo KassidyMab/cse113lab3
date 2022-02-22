@@ -1,9 +1,9 @@
 /**
  * @file array.c
  *
- * @author Scott Chadde
+ * @author Kassidy Maberry
  *
- * @date 1/1/2013
+ * @date 2/21/2022
  *
  * Assignment: Lab 3
  *
@@ -166,13 +166,18 @@ void selectionSort(int arr[], int n)
 
 int median(int arr[], size_t size)
 {
-	
+	int med;
+	if (size%2 == 0){
+		med = size / 2;
+	} else {
+		med = (size + 1) / 2;
+	}
 
-	return 0;
+	return med;
 }
 
 
-int odd_count(int arr[], int size)
+int odd_count(int arr[], size_t size)
 {
 	int total = 0;
 	for (int i = 0; i < size; i++){
@@ -185,7 +190,7 @@ int odd_count(int arr[], int size)
 }
 
 
-int even_count(int arr[], int size)
+int even_count(int arr[], size_t size)
 {
 	int total = 0;
 	for (int i = 0; i < size; i++){
@@ -195,4 +200,17 @@ int even_count(int arr[], int size)
 	}
 	return total;
 
+}
+
+
+int divisible_count(int arr[], size_t size, int div)
+{
+	int total = 0;
+	for (int i = 0; i < size; i++){
+		if (arr[i] % div == 0){
+			total++;
+		}
+	}
+
+	return total;
 }

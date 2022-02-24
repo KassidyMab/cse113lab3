@@ -1,9 +1,9 @@
 /**
  * @file array.h
  * 
- * @author Scott Chadde
+ * @author Kassidy Maberry
  *
- * @date 1/1/2013
+ * @date 2022/02/23
  *  
  * Assignment: Lab 3 
  *
@@ -13,7 +13,7 @@
  *  
  * @bugs none
  *
- * @todo add floating point versions of the functions
+ * @todo none
  */
 
 #ifndef ARRAY_H_

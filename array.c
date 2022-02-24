@@ -11,12 +11,11 @@
  *
  * @details The functions implemented include basic counting,
  * summing, searching, and basic statistical methods (average,
- * median, the max, the min). Sorting is implemented via
- * bubble sort, a not very efficient sort, and insertion sort.
+ * median, the max, the min). 
  *
  * @bugs none
  *
- * @todo implement floating point versions of the functions
+ * @todo 
  */
 
  /* lab 3 test array */

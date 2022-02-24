@@ -1,8 +1,20 @@
-/**
- * @file prelab_credit.c
- * @author
- * @date
- * @brief determine if a credit card is valid using Luhn's algorithm.
+ /**
+ * @file lab3.c
+ *
+ * @author Kassidy Maberry
+ *
+ * @date 2/21/2022
+ *
+ * Assignment: Lab 3
+ *
+ * @brief a program that uses the luhns algorithm to verify a card.
+ *
+ * @details The program will take a user input and then run it through the
+ * luhns algorithm to verify that the card is a true card.
+ *
+ * @bugs none
+ *
+ * @todo none
  */
 
 
@@ -18,31 +30,34 @@ void print_card(int card[], int size);
 void arradouble(int card[]);
 int cardadd(int card[]);
 int cardver(int card);
-int digitize(char digit);
 void convert_card(int card[], char copy[]);
 void read(char card[], int tof);
 
 int main(void)
 {
-	char visa[16];
+	char visa[17];
 	int card[16];
 	convert_card(card, visa);
-
 	arradouble(card);
+
 
 	int total = cardver(cardadd(card));
 	read(visa, total);
 	return 0;
 }
 
-
+/**
+ * Reads out the original user input and then if the card is valid or not.
+ * @param card[] is the origial card input.
+ * @param tof is used to check if it is a valid input.
+ */
 void read(char card[], int tof)
 {
-
-	for (int i = 0; i < 0; i++){
+	
+	for (int i = 0; i < 16; i++){
 		printf("%c", card[i]);
 	}
-	printf("is a ");
+	printf(" is a ");
 	if (tof == 0){
 		printf("valid card");
 	} else {
@@ -51,63 +66,30 @@ void read(char card[], int tof)
 	printf(".\n");
 }
 
+
+/**
+ * Takes the users input, copies it to another array to save the character
+ * inputs, and then converts an array into integers.
+ * @param card[] a interger array for calculations.
+ * @param copy[] a character array for printing out.
+ */
 void convert_card(int card[], char copy[])
 {
 	// 50 element array to prevent the user from overflowing it's values.
         char visa[50];
         char i, tmp;
 	int len = 0;
-        while ((tmp = getchar()) != '\n'){
-                visa[len] = tmp;
-                len++; 
-        }
+	printf("Please enter a card number: ");
+	fgets(visa, 20, stdin);
 
-
-	for (i = 0; i < 16; i++){
-		// I is compared to len to make incase its less than 16 digits.
-		if (i < len){
-			card [i] = copy[i];
-			card[i] = digitize(visa[i]);
-		} else {
-			copy[i] = '0';
-			card[i] = 0;
-		}
+	for (i = 0; i < 16; i++){		
+		copy[i] = visa[i];
+		card[i] = visa[i] - '0';
 	}
+	copy[16] = '\0';
 
 }
 
-
-int digitize(char digit)
-{
-	switch (digit)
-	{
-	case ('0'):
-		return 0;
-	case('1'):
-		return 1;
-	case('2'): 
-		return 2;
-	case('3'):
-		return 3;
-	case('4'):
-		return 4;
-	case('5'):
-		return 5;
-	case('6'):
-		return 6;
-	case('7'):
-		return 7;
-	case('8'):
-		return 8;
-	case('9'):
-		return 9;
-	// If anything but those characters are given it's defualted as a zero.
-	default:
-		return 0;
-	}
-
-
-}
 
 
 /**
@@ -130,10 +112,9 @@ void arradouble(int card[])
 
 
 /**
- * @brief Adds the digits of the cards together. If a single digit of
+ * Adds the digits of the cards together. If a single digit of
  * the number is two digits it is then modulated by 10 and a one is 
  * added.
- * 
  * @param card The current cards numbers.
  * @return total The value of all of the numbers added together.
  */
@@ -148,14 +129,13 @@ int cardadd(int card[])
 			total = total + card[i];
 		}
 	}
-	printf("%d", total);
+	
 	return total;
 }
 
 /**
- * @brief A function that checks if the modulus of the number by 10 is zero
+ * A function that checks if the modulus of the number by 10 is zero
  * if it is zero it returns valid otherwise it is invalid.
- * 
  * @param total The added amount of each credit card value after theyve been
  * compiled.
  * @return A true or false statement mentioning if it is valid or not. 
@@ -173,8 +153,7 @@ int cardver(int total)
 
 
 /**
- * @brief A function that prints out the value of each card number
- * 
+ * A function that prints out the value of each card number
  * @param The card's number
  * @param The length of the card.
  */
